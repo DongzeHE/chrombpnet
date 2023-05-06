@@ -320,8 +320,12 @@ def qc_hit_caller(args):
 if __name__=="__main__":
 
 	args = fetch_arguments()
-	exclude = open(args.modisco_motifs_exclude,"r").readlines()
-	exclude = [x.strip() for x in exclude]
+
+	if args.modisco_motifs_exclude:
+		exclude = open(args.modisco_motifs_exclude,"r").readlines()
+		exclude = [x.strip() for x in exclude]
+	else:
+		exclude = []
 	
 	if args.hit_caller == "moods" :
 		out = shutil.which("moods-dna.py")

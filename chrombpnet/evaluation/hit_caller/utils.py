@@ -142,7 +142,7 @@ def import_tfmodisco_motifs(tfm_results_path, exclude, trim_threshold, trim=True
 				#if metacluster_i!=0 or pattern_i!=0:
 				#	continue
 
-				if len(pattern['seqlets_and_alnmts']['seqlets']) < 100:
+				if len(pattern['seqlets_and_alnmts']['seqlets']) < 1000:
 					continue
 					
 				if "%d_%d" % (metacluster_i,pattern_i) in exclude:

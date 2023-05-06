@@ -531,8 +531,8 @@ def resolve_overlaps(output_dir,filtered_hits_path,contribs_bw,reference_fasta, 
 		tomtom = pd.read_csv(tomtom_anotation_path, sep="\t")
 		label_dict = {}
 		for index,row in tomtom.iterrows():
-			keyd = str(row['Pattern']).replace("metacluster_","").replace("pattern_","").replace(".","_")
-			label_dict[keyd] = keyd + "_" + str(row['Match_1'])
+			keyd = str(row['pattern']).replace("_patterns","").replace("pattern_","").replace(".","_")
+			label_dict[keyd] = keyd + "_" + str(row['match0'])
 			data['hit_name'] = data['hit_name'].apply(lambda x: label_dict[x] if x in label_dict else x)
 
 	new_data = []
